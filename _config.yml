@@ -3,14 +3,39 @@
 #
 
 # Name of your site (displayed in the header)
-name: Your Name
+name: 
+  en: Maksim Karasev
+  ru: Максим Карасев
 
 # Short bio or description (displayed in the header)
-description: Web Developer from Somewhere
+description: 
+  en: Android and web developer, Linux enthusiast
+  ru: Android и веб разработчик, Linux энтузиаст
+
+index:
+  en: https://karasevm.ru
+  ru: https://karasevm.ru/ru/
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
+#avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
+avatar: {{ site.baseurl }}/images/avatar.jpg
+# Name of the author of the blog
+author:
+  en: Maksim Karasev
+  ru: Максим Карасев
 
+#
+# Localization
+#
+local:
+ en:
+   written: ""
+   blog: "Blog"
+   about: "About"
+ ru:
+   written: ""
+   blog: "Блог"
+   about: "Инфо"
 #
 # Flags below are optional
 #
@@ -21,27 +46,27 @@ footer-links:
   email:
   facebook:
   flickr:
-  github: barryclark/jekyll-now
+  github: karasevm
   instagram:
   linkedin:
   pinterest:
   rss: # just type anything here for a working RSS icon
-  twitter: jekyllrb
+  twitter: 
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
   youtube: # channel/<your_long_string> or user/<user-name>
   googleplus: # anything in your profile username that comes after plus.google.com/
-
+  telegram:  # your telegram username
+  vk:  # either your id or custom page url
 
 # Enter your Disqus shortname (not your username) to enable commenting on posts
 # You can find your shortname on the Settings page of your Disqus account
 disqus:
-
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 google_analytics:
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-url:
+url: https://karasevm.ru
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)

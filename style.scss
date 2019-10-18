@@ -15,12 +15,16 @@
 
 html {
   font-size: 100%;
+  height: 100%;
 }
 
 body {
 	background: $white;
   font: 18px/1.4 $helvetica;
   color: $darkGray;
+  display:flex; 
+  flex-direction:column;
+  min-height: 100%;
 }
 
 .container {
@@ -118,6 +122,8 @@ img {
 .date {
   font-style: italic;
   color: $gray;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 // Specify the color of the selection
@@ -276,6 +282,13 @@ nav {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   background-color: $lightGray;
+  text-align: end;
+  margin-top:auto;
+}
+
+.cr {
+  margin-inline-end: 1em;
+  color: #676767;
 }
 
 footer {
@@ -283,6 +296,9 @@ footer {
   text-align: center;
 }
 
+.en:lang(en), .ru:lang(ru){
+    font-weight: bold;
+}
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";

@@ -2,14 +2,11 @@
 layout: page
 title: About
 permalink: /about/
+lang: en
+pageid: about
 ---
 
-Some information about you!
+# About this blog
+In this blog I will mostly post technology/programming guides on topics I found difficult to understand or, in some cases, that are not documented at all anywhere else.
 
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
-
-### Contact me
-
-[email@domain.com](mailto:email@domain.com)
+Comments are disabled but you are welcome to contact me via email or any other social networks linked at the bottom of this page.
