@@ -7,6 +7,7 @@
 
 @import "reset";
 @import "variables";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto+Mono:wght@400;700&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 // Syntax highlighting @import is at the bottom of this file
 
 /**************/
@@ -20,7 +21,7 @@ html {
 
 body {
 	background: $white;
-  font: 18px/1.4 $helvetica;
+  font: 18px/1.4 $roboto;
   color: $darkGray;
   display:flex; 
   flex-direction:column;
@@ -35,9 +36,10 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $helveticaNeue;
-  color: $darkerGray;
-  font-weight: bold;
+  font-family: $robotoCondensed;
+  font-weight: 700;
+  color: $darkGray;
+  //font-weight: bold;
 
   line-height: 1.7;
   margin: 1em 0 15px;
@@ -65,7 +67,7 @@ h3 {
 
 h4 {
   font-size: 18px;
-  color: $gray;
+  color: $darkGray;
 }
 
 p {
@@ -77,7 +79,7 @@ a {
   text-decoration: none;
 	cursor: pointer;
   &:hover, &:active {
-    color: $blue;
+    color: $darkBlue;
   }
 }
 
@@ -112,6 +114,15 @@ strong, b {
 
 img {
   max-width: 100%;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  @include print{
+    box-shadow: none;
+  }
 }
 
 // Fixes images in popup boxes from Google Translate
@@ -129,11 +140,11 @@ img {
 // Specify the color of the selection
 ::-moz-selection {
   color: $black;
-  background: $lightGray;
+  background: $selectionGray;
 }
 ::selection {
   color: $black;
-  background: $lightGray;
+  background: $selectionGray;
 }
 
 // Nicolas Gallagher's micro clearfix hack
@@ -157,7 +168,7 @@ img {
 //
 
 .wrapper-masthead {
-  margin-bottom: 50px;
+  margin-bottom: 1em;
 }
 
 .masthead {
@@ -171,8 +182,8 @@ img {
 
 .site-avatar {
   float: left;
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 150px;
   margin-right: 15px;
 
   @include mobile {
@@ -181,8 +192,26 @@ img {
     margin: 0 auto;
   }
 
+  //img {
+  //  border-radius: 5px;
+  //}
   img {
-    border-radius: 5px;
+    box-shadow:none;
+    margin-top: inherit;
+    margin-bottom: inherit;
+  }
+}
+
+.wrapper-lang{
+  text-align: right; 
+  line-height: 2em;
+  margin-top: 66px;
+  @include mobile {
+    float: none;
+    margin-top: 9px;
+    display: block;
+    font-size: 16px;
+    text-align: center;
   }
 }
 
@@ -200,8 +229,8 @@ img {
   margin: 0;
   color: $darkGray;
   cursor: pointer;
-  font-family: $helveticaNeue;
-  font-weight: 300;
+  font-family: $robotoCondensed;
+  //font-weight: 300;
   font-size: 28px;
   letter-spacing: 1px;
 }
@@ -219,7 +248,7 @@ img {
 nav {
   float: right;
   margin-top: 23px; // @TODO: Vertically middle align
-  font-family: $helveticaNeue;
+  font-family: $robotoCondensed;
   font-size: 18px;
 
   @include mobile {
@@ -233,7 +262,7 @@ nav {
     margin-left: 20px;
     color: $darkGray;
     text-align: right;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 1px;
 
     @include mobile {
@@ -294,10 +323,18 @@ nav {
 footer {
   padding: 20px 0;
   text-align: center;
+
+  @include print{
+    display: none;
+  }
 }
 
 .en:lang(en), .ru:lang(ru){
     font-weight: bold;
+}
+
+pre.highlight{
+  padding: 1em;
 }
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start

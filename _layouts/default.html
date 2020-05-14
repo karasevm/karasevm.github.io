@@ -39,7 +39,7 @@
           <nav>
             <a href="{{ site.baseurl }}{% unless page.lang=='en' %}/{{ page.lang }}{% endunless %}/">{{ site.local[page.lang].blog }}</a>
             <a href="{{ site.baseurl }}{% unless page.lang=='en' %}/{{ page.lang }}{% endunless %}/about">{{ site.local[page.lang].about }}</a>
-            <div class="wrapper" style="text-align: right; line-height: 2em">
+            <div class="wrapper-lang">
   {% assign posts=site.posts | where:"pageid", page.pageid | sort: 'lang' %}
   {% for post in posts %} <a href="{{ site.baseurl }}{{ post.url }}" class="{{ post.lang }}">{{ post.lang }}</a> {% endfor %}
 

@@ -4,12 +4,25 @@
   border: 1px solid #ddd;
   -moz-box-shadow: 3px 3px rgba(0,0,0,0.1);
   -webkit-box-shadow: 3px 3px rgba(0,0,0,0.1);
-  box-shadow: 3px 3px rgba(0,0,0,0.1);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
   overflow-x: auto;
+
+  @include print{
+    box-shadow: none;
+    overflow-x: inherit;
+    overflow-wrap: anywhere;
+  }
 }
 
 code {
-  font-family:'Bitstream Vera Sans Mono','Courier', monospace;
+  font-family: 'Roboto Mono', monospace;
+  background-color: #efefef;
+  
+  @include print{
+    white-space: normal;
+  }
+  
+  
 }
 
 .highlight .c { color: #586E75 } /* Comment */

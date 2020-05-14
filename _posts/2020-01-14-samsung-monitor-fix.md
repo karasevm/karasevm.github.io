@@ -5,7 +5,7 @@ lang: en
 pageid: samsung-monitor
 ---
 Ever since I purchased my U28D590 monitor I had the same issue: washed out colors while using 1080p. As this is a somewhat common problem for NVIDIA, I found the usual solution which was changing the `Output dynamic range` option in NVIDIA Control Panel. But when I opened the resolution setting, the option was not there, probably because the monitor was connected via DisplayPort. This particular model does not support 4k@60hz via HDMI as it does not support HDMI 2.0 so connecting via HDMI was not an option. 
-
+<!--more-->
 At the time I gave up, at 1440p the colors were displaying correctly and, most of the time, 1440p satisfied me when I requiered a lower resolution for any reason.
 
 ### The solution
