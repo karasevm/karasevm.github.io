@@ -7,7 +7,7 @@ lang: ru
 <rss version="2.0">
 
     <channel>
-        <title>{{ site.title[page.lang] }}</title>
+        <title>{{ site.name[page.lang] }}</title>
         <link>{{ site.url }}</link>
         <description>{{ site.description[page.lang] }}</description>
         <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
@@ -19,7 +19,7 @@ lang: ru
                 {{ post.url | prepend: site.url }}
             </link>
             <description>
-                {{ post.content | xml_escape | truncate: '400' | escape }}
+                {{ post.content | xml_escape | truncate: '400' | xml_escape }}
             </description>
             <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
             <guid>
