@@ -19,7 +19,7 @@ lang: ru
                 {{ post.url | prepend: site.url }}
             </link>
             <description>
-                {{ post.content | xml_escape | truncate: '400' | xml_escape }}
+                {{ post.content | truncate: '400' | xml_escape }}
             </description>
             <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
             <guid>
