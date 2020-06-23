@@ -21,7 +21,56 @@
         {% for page in pages %}
            <link rel="alternate" hreflang="{{ page.lang }}" href="{{ page.url }}" />
         {% endfor %}
+    
+  <script>
+    //Helper functions 
+    function setCookie(name,value,days) {
+      var expires = "";
+      if (days) {
+          var date = new Date();
+          date.setTime(date.getTime() + (days*24*60*60*1000));
+          expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    }
+    function getCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+      }
+      return null;
+    }
+    function eraseCookie(name) {   
+      document.cookie = name+'=; Max-Age=-99999999;';  
+    }
 
+    let checkLang = function(){
+      if(!getCookie('lang-switched')){
+        let lang = window.navigator.languages[0].substring(0,2);
+        if(document.documentElement.lang != lang){
+          if(lang == 'ru'){
+            window.location.href = "/ru/";
+          }else {
+            window.location.href = '/';
+          }
+        }
+      }
+    }
+
+    path = window.location.pathname;
+    if(path == '/' || path == '/ru/'){
+      checkLang();
+    }
+
+    window.onload = () => {
+      list = document.getElementsByClassName("wrapper-lang")[0].children;
+      for (let link of list) link.addEventListener('click', () => setCookie("lang-switched", "true", 365))
+    }
+    
+  </script>
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
 
