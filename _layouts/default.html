@@ -71,6 +71,7 @@
     }
     
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/instantclick/3.1.0/instantclick.js" integrity="sha512-GFHLOIAT2kuO5oFf3rWEX9Cw7mnPUopWtJC6cuUch+sU1fb/nUTzgxSNOoIKwHdfzmHg7v3WmB9BG8GpCaObQg==" crossorigin="anonymous"></script>
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
 
@@ -90,10 +91,10 @@
             <a href="{{ site.baseurl }}{% unless page.lang=='en' %}/{{ page.lang }}{% endunless %}/about">{{ site.local[page.lang].about }}</a>
             <div class="wrapper-lang">
   {% assign posts=site.posts | where:"pageid", page.pageid | sort: 'lang' %}
-  {% for post in posts %} <a href="{{ site.baseurl }}{{ post.url }}" class="{{ post.lang }}">{{ post.lang }}</a> {% endfor %}
+  {% for post in posts %} <a href="{{ site.baseurl }}{{ post.url }}" class="{{ post.lang }}" data-no-instant>{{ post.lang }}</a> {% endfor %}
 
   {% assign pages=site.pages | where:"pageid", page.pageid | sort: 'lang' %}
-  {% for page in pages %} <a id="pages_link" href="{{ site.baseurl }}{{ page.url }}" class="{{ page.lang }}">{{ page.lang }}</a> {% endfor %}
+  {% for page in pages %} <a id="pages_link" href="{{ site.baseurl }}{{ page.url }}" class="{{ page.lang }}" data-no-instant>{{ page.lang }}</a> {% endfor %}
 </div>
           </nav>
         </header>
@@ -114,7 +115,7 @@
         {% if site.author[page.lang] %}&copy; {{ site.time | date: "%Y" }} {{ site.author[page.lang] }}{% endif %}
       </span>
     </div>
-
+    <script data-no-instant>InstantClick.init();</script>
     {% include analytics.html %}
   </body>
 </html>
